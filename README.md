@@ -1,4 +1,4 @@
-```markdown name=README.md
+
 # go-projects
 
 A collection of Go (Golang) projects.
@@ -36,4 +36,3 @@ Contributions are welcome! Please open issues or submit pull requests for any im
 ## License
 
 This repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-```
