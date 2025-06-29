@@ -27,8 +27,10 @@ func main(){
 	PurpleOnBlack.Println("\t\t\t\tProgramlama dilleri: Javascript                                ")
 	WhiteOnPurple.Println("\t\t\t\tKullandığı DE: KDE/XFCE4                                       ")
 	PurpleOnWhite.Println("\t\t\t\tOS: Gentoo                                                     ")
+	PurpleOnBlack.Println("\t\t\t\tProjeler: tampermonkey-beyler, drunkenspin,                    ")
+	BlackOnPurple.Println("\t\t\t\tGitlab: https://gitlab.com/pwish                               ")
 	PurpleOnBlack.Println("\t\t\t\t                    Pwish-Go @v1.0.0                           ")
-	WhiteOnPurple.Println("\t\t\t\t                      Made by isa                              ")
+	WhiteOnPurple.Println("\t\t\t\t               Made by isa-programmer for pwish                ")
 
 	
 }
