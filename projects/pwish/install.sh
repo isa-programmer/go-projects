@@ -1,7 +1,8 @@
 echo "İndiriliyor..."
 
-wget "https://raw.githubusercontent.com/isa-programmer/go-projects/raw/refs/heads/main/projects/pwish/pwish-go"
+FILE_URL="https://github.com/isa-programmer/go-projects/raw/refs/heads/main/projects/pwish/pwish-go"
 
+wget -o "pwish-go" FILE_URL
 chmod +x pwish-go
 
-echo "İndirildi!"
+echo "İndirildi! Çalıştırmak için ./pwish-go"
