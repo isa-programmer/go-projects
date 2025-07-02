@@ -1,36 +1,43 @@
 package main
-
+// MIT LICENSE
+// İşsiz gibi bununla uğraştım .d
+// Muhtemelen kimse okumayacak
 import (
+	"github.com/charmbracelet/lipgloss"
 	"fmt"
 	"embed"
-	"github.com/fatih/color"
 )
+
+
+func customBox(String string){
+	var style = lipgloss.NewStyle().
+		Bold(true).
+		BorderStyle(lipgloss.ThickBorder()).
+		BorderForeground(lipgloss.Color("#ff00ff")).
+		MarginLeft(15).
+		Foreground(lipgloss.Color("#f8f8ff")).
+		Background(lipgloss.Color("#8c018c"))
+
+	fmt.Println(style.Render(String))
+}
+
 //go:embed pwish.txt
 var pwishContent embed.FS
 
-func printPwishAvatar(){
-	pwishAvatar,err := pwishContent.ReadFile("pwish.txt")
+func ReadPwish() (string,error) {
+	content, err := pwishContent.ReadFile("pwish.txt")
 	if err != nil{
-		fmt.Println("Avatar not found",err)
+		return "",err
 	}
-	fmt.Println(string(pwishAvatar))
+
+	return string(content), nil
 }
 
 func main(){
-	PurpleOnBlack := color.New(color.FgMagenta,color.BgBlack)
-	BlackOnPurple := color.New(color.FgBlack,color.BgMagenta)
-	WhiteOnPurple := color.New(color.FgWhite,color.BgMagenta)
-	PurpleOnWhite := color.New(color.FgMagenta,color.BgWhite)
-	printPwishAvatar()
-	PurpleOnBlack.Println("\t\t\t\t                    Pwish-Go @v1.0.1                           ")
-	BlackOnPurple.Println("\t\t\t\tAd: Pwish                                                      ")
-	PurpleOnBlack.Println("\t\t\t\tProgramlama dilleri: Java,Javascript,C,C++,C#,HTML,Python      ")
-	WhiteOnPurple.Println("\t\t\t\tKullandığı DE: KDE Plasma/XFCE4/Cinnamon                       ")
-	PurpleOnWhite.Println("\t\t\t\tOS: Gentoo                                                     ")
-	PurpleOnBlack.Println("\t\t\t\tProjeler: tampermonkey-beyler, drunkenspin                     ")
-	BlackOnPurple.Println("\t\t\t\tGitlab: https://gitlab.com/pwish                               ")
-	PurpleOnBlack.Println("\t\t\t\t                    Pwish-Go @v1.0.1                           ")
-	WhiteOnPurple.Println("\t\t\t\t               Made by isa-programmer for pwish                ")
-
-	
+	avatar,err := ReadPwish()
+	if err != nil{
+		fmt.Println(err)
+		return
+	}
+    customBox(avatar)
 }
